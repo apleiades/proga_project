@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+
+{% block title %}{{ recipe.recipe_name }}{% endblock %}
+
+{% block content %}
+<div class="recipe-details">
+    <h1 class="recipe-header">{{ recipe.recipe_name }}</h1>
+    <img src="{{ recipe.image }}" alt="{{ recipe.recipe_name }}" class="recipe-image">
+
+    <div class="base-text">
+        <h3>Ингредиенты:</h3>
+        <p>{{ recipe.ingredients }}</p>
+
+        <h3>Рецепт:</h3>
+        <p>{{ recipe.instructions }}</p>
+    </div>
+
+    <a href="/" class="back-button">На главную</a>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+
+{% block title %}Поиск рецептов{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="recipe-header">Рецепты с ингредиентами: {{ ingredients }}</h1>
+
+    <div class="recipes-grid">
+        {% if appr_recipes %}
+            {% for recipe in appr_recipes %}
+                <div class="recipe-card">
+                    <a href="{{ url_for('recipe', recipe_id=recipe.id) }}" class="recipe-link">
+                        <img src="{{ recipe.image }}" alt="{{ recipe.recipe_name }}" class="recipe-image">
+                        <div class="recipe-text">
+                            <h3 class="recipe-name">{{ recipe.recipe_name }}</h3>
+                            <p class="recipe-description">{{ recipe.description }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="base-text">К сожалению, по Вашему запросу нет рецептов. Попробуйте ввести другой список ингредиентов!</p>
+        {% endif %}
+    </div>
+
+    <a href="/" class="back-button">На главную</a>
+</div>
+{% endblock %}

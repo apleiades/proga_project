@@ -1,0 +1,42 @@
+{% extends 'home.html' %}
+
+{% block title %}Добавить свой рецепт{% endblock %}
+
+{% block content %}
+<div class="container mt-5 p-4" style="background-color: white; border-radius: 10px;">
+    <h1>Добавить свой рецепт</h1>
+    <form method="POST" action="/add_recipe">
+        <div class="form-group">
+            <label for="name">Название рецепта:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="instructions">Рецепт:</label>
+            <textarea class="form-control" id="instructions" name="instructions" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="ingredients">Ингредиенты (через запятую):</label>
+            <input type="text" class="form-control" id="ingredients" name="ingredients" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Описание (необязательно):</label>
+            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="link">Ссылка на рецепт (необязательно):</label>
+            <input type="text" class="form-control" id="link" name="link">
+        </div>
+
+        <div class="form-group">
+            <label for="image">Ссылка на изображение (необязательно):</label>
+            <input type="text" class="form-control" id="image" name="image">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Добавить рецепт</button>
+    </form>
+</div>
+{% endblock %}

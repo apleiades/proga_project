@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+
+{% block title %}Рецепт дня{% endblock %}
+
+{% block content %}
+<div class="recipe-details">
+    <div class="recipe-header">
+        <h1>Рецепт дня</h1>
+    </div>
+    <div class="image-container">
+        <img src="{{ recipe.image }}" alt="Изображение блюда" class="recipe-of-the-day-image">
+    </div>
+
+    <h2 class="recipe-header">{{ recipe.name }}</h2>
+
+    <p class="base-text"><strong>Описание:</strong> {{ recipe.description }}</p>
+    <p class="base-text"><strong>Ингредиенты:</strong> {{ recipe.ingredients }}</p>
+    <p class="base-text"><strong>Рецепт:</strong> {{ recipe.instructions }}</p>
+</div>
+{% endblock %}

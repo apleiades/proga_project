@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+
+{% block title %}Поиск рецептов{% endblock %}
+
+{% block content %}
+<div class="search-container">
+    <h1 class="search-title">Поиск рецептов</h1>
+    <form action="/search" method="post" class="search-form">
+        <label for="ingredients" class="form-label">Введите ингредиенты через запятую:</label>
+        <textarea id="ingredients" name="ingredients" rows="4" cols="50" class="form-textarea"></textarea>
+        <button type="submit" class="search-button">Найти рецепты</button>
+    </form>
+</div>
+{% endblock %}
